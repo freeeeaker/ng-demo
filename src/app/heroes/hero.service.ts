@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero'
-import { HEROES } from './mock-heroes'
 import { Observable, of } from 'rxjs'
 import { MessageService } from './message.service'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { catchError, map, tap } from 'rxjs/operators'
+import { HeroesModule } from "./heroes.module";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: HeroesModule
 })
 export class HeroService {
   constructor(
